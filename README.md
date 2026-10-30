@@ -1,9 +1,8 @@
-# Agente de sourcing China · demo n8n
-
-Demo interactiva para Product Managers que muestra cómo un flujo de **n8n** con **Gmail** y **agentes de IA** puede pedir cotizaciones a fábricas chinas, leer las respuestas (PDF, Excel o chino), calcular el costo puesto en depósito y armar una comparativa para aprobar con un clic.
-
-- Tocá cualquier nodo para ver qué hace.
-- Los nodos violetas son agentes de IA: tocalos para ver su prompt, herramientas, memoria, fuentes y modelo.
-- Elegí un escenario y tocá **▶ Recorrer** para verlo en movimiento.
-
-Los datos son ficticios. Es un solo archivo (`index.html`), sin dependencias.
+# Asistente de sourcing · demo n8n
+ 
+Demo interactiva para el área de Ingeniería y Desarrollo de Producto. Muestra cómo un Gmail con **n8n** y **agentes de IA** puede buscar proveedores, enviar RFQ en inglés, responder preguntas de rutina, hacer seguimiento y resumir todo en español, hasta dejar listo el paquete para pedir la PI.
+ 
+- 4 flujos en pestañas: Buscar y consultar · Bandeja inteligente · Seguimiento diario · Comparar y decidir.
+- Tocá cualquier nodo para ver qué hace. Los violetas son agentes: muestran prompt, herramientas, memoria, fuentes, límites y modelo.
+- Elegí un caso y tocá **▶ Recorrer** para verlo en movimiento.
+Datos ficticios. Un solo archivo (`index.html`), sin dependencias.
