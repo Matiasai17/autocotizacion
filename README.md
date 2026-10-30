@@ -7,6 +7,3 @@ Demo interactiva para Product Managers que muestra cómo un flujo de **n8n** con
 - Elegí un escenario y tocá **▶ Recorrer** para verlo en movimiento.
 
 Los datos son ficticios. Es un solo archivo (`index.html`), sin dependencias.
-
-## Publicar en GitHub Pages
-Settings → Pages → Source: *Deploy from a branch* → Branch `main` / `(root)` → Save.
