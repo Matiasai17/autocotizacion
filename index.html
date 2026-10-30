@@ -12,7 +12,7 @@
 :root{
   --bg:#eef0f3; --canvas:#f7f8fa; --dot:#cdd3dc; --surface:#ffffff; --fg:#1b2130; --muted:#5f687a; --line:#c5cbd5; --soft:#e4e8ee;
   --accent:#e4502e;
-  --c-trigger:#e8772e; --c-gmail:#d6403a; --c-ai:#2b8fb3; --c-agent:#6a3fd0; --agent-bg:#f1ecfd; --c-logic:#178a74; --c-data:#2f6fd0;
+  --c-trigger:#e8772e; --c-gmail:#d6403a; --c-ai:#9b7be0; --c-agent:#6a3fd0; --agent-bg:#f1ecfd; --c-logic:#178a74; --c-data:#2f6fd0;
   --ok:#178a74; --bad:#d6403a;
   --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --f-body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
@@ -20,11 +20,11 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#13161c; --canvas:#191d25; --dot:#2c323e; --surface:#222733; --fg:#e9ecf2; --muted:#9ba4b6; --line:#444e61; --soft:#1e232e;
-  --accent:#ff7652; --c-trigger:#f49450; --c-gmail:#f06a63; --c-ai:#5bbbe0; --c-agent:#b096ff; --agent-bg:#2c2545; --c-logic:#3cc2a3; --c-data:#6aa0f2;
+  --accent:#ff7652; --c-trigger:#f49450; --c-gmail:#f06a63; --c-ai:#c8b4ff; --c-agent:#b096ff; --agent-bg:#2c2545; --c-logic:#3cc2a3; --c-data:#6aa0f2;
   --ok:#3cc2a3; --bad:#f06a63; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#13161c; --canvas:#191d25; --dot:#2c323e; --surface:#222733; --fg:#e9ecf2; --muted:#9ba4b6; --line:#444e61; --soft:#1e232e;
-  --accent:#ff7652; --c-trigger:#f49450; --c-gmail:#f06a63; --c-ai:#5bbbe0; --c-agent:#b096ff; --agent-bg:#2c2545; --c-logic:#3cc2a3; --c-data:#6aa0f2;
+  --accent:#ff7652; --c-trigger:#f49450; --c-gmail:#f06a63; --c-ai:#c8b4ff; --c-agent:#b096ff; --agent-bg:#2c2545; --c-logic:#3cc2a3; --c-data:#6aa0f2;
   --ok:#3cc2a3; --bad:#f06a63; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -40,7 +40,7 @@ h3{font-family:var(--f-display);font-weight:700;font-size:18px;line-height:1.15;
 button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* Hero */
-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
+header{display:grid;gap:20px}
 @media (max-width:800px){header{grid-template-columns:minmax(0,1fr)}}
 .ttl{display:grid;gap:12px;max-width:800px}
 .lead{margin:0;font-size:18px;color:var(--muted);max-width:60ch}
@@ -67,7 +67,7 @@ header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-item
 .who{display:grid;gap:6px;font-size:13px}
 .who div{display:grid;grid-template-columns:72px 1fr;gap:6px;align-items:baseline}
 .who span{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.who .y span{color:var(--accent)} .who .a span{color:var(--c-agent)}
+.who .yo span{color:var(--accent)} .who .a span{color:var(--c-agent)}
 .step.last{border-style:dashed}
 .limit{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
 .limit::before{content:"";flex:none;width:18px;height:2px;background:var(--accent)}
@@ -109,7 +109,7 @@ header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-item
 .btn.play{background:var(--accent);border-color:var(--accent);color:#fff;padding:0 16px}
 .scdesc{font-size:14px;margin:0;color:var(--muted);min-height:20px} .scdesc b{color:var(--fg)}
 
-.main{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:14px;align-items:start}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}
 @media (max-width:1050px){.main{grid-template-columns:minmax(0,1fr)}}
 .viewport{background:var(--canvas);background-image:radial-gradient(var(--dot) 1.2px,transparent 1.2px);background-size:20px 20px;border:1px solid var(--line);border-radius:14px;overflow:auto;max-height:80vh;min-width:0;position:relative}
 .sizer{position:relative}
@@ -272,8 +272,16 @@ td.k{color:var(--muted)}
 .needs strong{margin-right:4px}
 .needs span{padding:6px 11px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-weight:600}
 
+details.more{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+details.more>summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:600;font-size:14.5px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted)}
+details.more[open]>summary::after{content:"−"}
+details.more>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:14px}
+details.more>.inner{padding:0 16px 16px}
+details.more .lc{background:var(--canvas)}
 /* Glosario */
-.gloss{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+
 .gloss dl{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}
 @media (max-width:900px){.gloss dl{grid-template-columns:minmax(0,1fr)}}
 .gloss dt{font-family:var(--f-mono);font-weight:600;color:var(--accent);font-size:13px}
@@ -291,20 +299,19 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="ttl">
       <div class="scope" id="scope"></div>
       <h1>Asistente de sourcing</h1>
-      <p class="lead">Un Gmail que <b>busca proveedores, les consulta en inglés, responde lo de rutina y te resume todo en español</b>. Vos decidís; el asistente hace el ida y vuelta hasta dejar todo listo para pedir la PI.</p>
+      <p class="lead">Un Gmail que <b>busca proveedores, les escribe en inglés, responde lo de rutina y te resume todo en español</b>. Vos decidís.</p>
     </div>
-    <div class="route" aria-label="Ruta"><div class="city">Ningbo<small>proveedor</small></div><div class="ship"></div><div class="city">Rosario<small>ingeniería</small></div></div>
   </header>
 
   <section aria-labelledby="h-proc">
-    <div class="shead"><span class="kicker">El proceso</span><h2 id="h-proc">Qué hacés vos y qué hace el asistente</h2></div>
+    <div class="shead"><h2 id="h-proc">Qué hacés vos y qué hace el asistente</h2></div>
     <div class="steps" id="steps"></div>
-    <div class="limit"><span><b>Hasta acá llega el asistente.</b> La PI y la orden de compra siguen por el circuito habitual con Compras.</span></div>
+    <div class="limit"><span><b>Hasta acá llega el asistente.</b> La PI y la orden de compra siguen como siempre.</span></div>
   </section>
 
-  <section aria-labelledby="h-n8n">
-    <div class="shead"><span class="kicker">Si nunca viste n8n</span><h2 id="h-n8n">Cómo leer los diagramas</h2></div>
-    <div class="learn">
+  <section aria-labelledby="h-flows" id="flows">
+    <div class="shead"><h2 id="h-flows">Así está armado en n8n</h2><p>Elegí un flujo y un caso, tocá ▶ Recorrer y después cualquier nodo.</p></div>
+    <details class="more"><summary>¿Primera vez con n8n? Cómo leer el diagrama</summary><div class="inner"><div class="learn">
       <article class="lc">
         <div class="mini"><svg viewBox="0 0 240 86" aria-hidden="true">
           <path class="w" d="M70 40H100M150 40H180"/>
@@ -344,11 +351,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
         <h3>Agentes a medida</h3>
         <p>Los nodos violetas son <b>agentes de IA configurados para el equipo</b>. Tocalos para ver su prompt, memoria, herramientas, fuentes y límites.</p>
       </article>
-    </div>
-  </section>
-
-  <section aria-labelledby="h-flows" id="flows">
-    <div class="shead"><span class="kicker">Los 4 flujos</span><h2 id="h-flows">Así está armado en n8n</h2><p>Cada pestaña es un flujo separado. Elegí un caso, tocá ▶ Recorrer y después tocá los nodos.</p></div>
+    </div></div></details>
     <div class="wftabs" role="tablist" id="wftabs"></div>
     <div class="bar">
       <div class="chips" id="scenarios"></div>
@@ -368,7 +371,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   </section>
 
   <section aria-labelledby="h-out">
-    <div class="shead"><span class="kicker">El resultado</span><h2 id="h-out">Lo que ves vos y lo que ve el proveedor</h2><p>Datos de ejemplo. Con el proveedor todo es en inglés; lo que te llega a vos, en español.</p></div>
+    <div class="shead"><h2 id="h-out">Lo que ves vos y lo que ve el proveedor</h2><p>Datos de ejemplo.</p></div>
     <div class="mails">
       <article class="mailbox">
         <div class="mtop"><span>Tu bandeja</span><em>español</em></div>
@@ -413,17 +416,16 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   </section>
 
   <section aria-labelledby="h-start">
-    <div class="shead"><span class="kicker">Cómo empezar</span><h2 id="h-start">Una prueba sin tocar Compras</h2></div>
+    <div class="shead"><h2 id="h-start">Una prueba sin tocar Compras</h2></div>
     <div class="phases">
-      <article class="ph now"><div class="pn">Fase 1 · 2 semanas<b>Arrancamos acá</b></div><h3>Leer y resumir</h3><p>Un Gmail nuevo solo para la prueba. El asistente lee, ordena y resume.</p><ul><li>Todo lo que escribe queda en borrador.</li><li>Resumen diario y comparativas.</li><li>Le podés preguntar por mail.</li></ul></article>
-      <article class="ph"><div class="pn">Fase 2 · con confianza</div><h3>Responder lo de rutina</h3><p>Las preguntas estándar se contestan solas; el resto sigue en borrador.</p><ul><li>Volumen, puerto, idioma, certificaciones.</li><li>Recordatorios automáticos.</li><li>Preguntas frecuentes del equipo.</li></ul></article>
-      <article class="ph"><div class="pn">Fase 3 · más adelante</div><h3>Conectar con Compras</h3><p>El paquete para la PI llega directo al circuito de Compras.</p><ul><li>Historial de proveedores compartido.</li><li>Costo puesto en depósito.</li><li>Integración con el sistema de gestión.</li></ul></article>
+      <article class="ph now"><div class="pn">Fase 1 · 2 semanas<b>Arrancamos acá</b></div><h3>Leer y resumir</h3><p>Un Gmail nuevo solo para la prueba. El asistente lee, ordena y resume.</p></article>
+      <article class="ph"><div class="pn">Fase 2 · con confianza</div><h3>Responder lo de rutina</h3><p>Las preguntas estándar se contestan solas; el resto sigue en borrador.</p></article>
+      <article class="ph"><div class="pn">Fase 3 · más adelante</div><h3>Conectar con Compras</h3><p>El paquete para la PI llega directo al circuito de Compras.</p></article>
     </div>
     <div class="needs"><strong>Para la prueba hace falta:</strong><span>1 cuenta de Gmail nueva</span><span>n8n (nube o servidor propio)</span><span>1 planilla de Google</span><span>1 clave de API de IA</span></div>
   </section>
 
-  <section class="gloss" aria-labelledby="h-gl">
-    <h2 id="h-gl">Glosario rápido</h2>
+  <details class="more gloss"><summary>Glosario: RFQ, MOQ, FOB, lead time, PI, PO</summary><div class="inner">
     <dl>
       <div><dt>RFQ</dt><dd>Request for Quotation. El mail donde se le pide precio y condiciones a un proveedor.</dd></div>
       <div><dt>MOQ</dt><dd>Minimum Order Quantity. La cantidad mínima que el proveedor acepta fabricar. Si pedís 800 y el MOQ es 1.000, no te vende.</dd></div>
@@ -432,7 +434,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
       <div><dt>PI</dt><dd>Proforma Invoice. La cotización formal del proveedor; se firma antes de pagar.</dd></div>
       <div><dt>PO</dt><dd>Purchase Order. La orden de compra que emite la empresa.</dd></div>
     </dl>
-  </section>
+  </div></details>
   <footer>Demo ilustrativa. Proveedores, personas, precios y specs son ficticios. Construido sobre n8n, Gmail, Google Sheets y modelos de IA.</footer>
 </div>
 
@@ -636,7 +638,7 @@ const STEPS=[
 document.getElementById('scope').innerHTML=[['user','Ingeniería y Desarrollo de Producto'],['lock','Antes de la PI y la orden de compra'],['mail','Gmail de prueba, sin tocar Compras']].map(([i,t])=>'<span><svg viewBox="0 0 24 24">'+I[i]+'</svg>'+t+'</span>').join('');
 const stepsEl=document.getElementById('steps');
 STEPS.forEach(([t,y,a,w],k)=>{const b=document.createElement('button');b.type='button';b.className='step'+(k===5?' last':'');
-  b.innerHTML='<div class="sn"><b>'+(k+1)+'</b><small>ver flujo '+(w+1)+' →</small></div><h3>'+t+'</h3><div class="who"><div class="y"><span>Vos</span>'+y+'</div><div class="a"><span>Asistente</span>'+a+'</div></div>';
+  b.innerHTML='<div class="sn"><b>'+(k+1)+'</b><small>flujo '+(w+1)+'</small></div><h3>'+t+'</h3><div class="who"><div class="yo"><span>Vos</span>'+y+'</div><div class="a"><span>Asistente</span>'+a+'</div></div>';
   b.addEventListener('click',()=>{setWf(w);document.getElementById('flows').scrollIntoView({behavior:'smooth',block:'start'})});stepsEl.appendChild(b)});
 
 /* ---------- Leyenda ---------- */
